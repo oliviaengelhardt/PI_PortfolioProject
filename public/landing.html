@@ -1,70 +1,324 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-        <title>landing</title>
+<head>
 
-        <style>
-            * {
-                box-sizing: border-box;
-            }
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>landing</title>
 
-            body {
-                background-color: black;
-                margin: 0;
-            }
 
-            .backgroundImage {
-                width: 100vw;
-                height: 100vh;
-                position: relative;
-                /* overflow: hidden;*/
-            }
 
-            .roW {
-                display: flex;
-                position: relative;
-            }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-            .roW span {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 125px;
-                color: rgba(22, 20, 56, 0.70);
-                width: 100%;
-                height: 100%;
-                flex-direction: column;
-                position: relative;
-                left: 0vh;
-            }
-        </style>
-    </head>
-    <body class="container">
-        <div class="backgroundImage">
+        body {
+            background-color: black;
+            margin: 0;
+        }
+
+        .backgroundImage {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            /* overflow: hidden;*/
+            display: flex;
+            flex-direction: row;
+        }
+
+        .backgroundImage .down {
+            opacity: 0;
+        }
+
+        .roW {
+            flex-direction: column;
+            position: relative;
+        }
+
+        .roW span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 125px;
+            color: rgba(22, 20, 56, 0.70);
+            width: 100%;
+            height: 100%;
+            position: relative;
+            left: 0vh;
+            /* background-color: rgba(0, 0, 0, 0); */
+        }
+
+        .roW span:hover {
+            color: rgba(255, 0, 0, 0.50);
+            background-blend-mode: color-dodge;
+            filter: blur(10px);
+
+        }
+
+        .backgroundImage:hover {
+            /* filter: blur(10px); */
+        }
+
+        .fake {
+            position: fixed;
+            top: 0;
+        }
+
+        .fake .up {
+            opacity: 0;
+        }
+
+        .fake .down {
+            opacity: 1;
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+</head>
+
+<body class="container">
+    <div class="backgroundImage real">
+        <div class="roW uno down">
+            <span>A</span>
+            <span>H</span>
+            <span>E</span>
+            <span>G</span>
+            <span>L</span>
+            <span>Q</span>
+            <span>R</span>
+            <span>Z</span>
+            <span>K</span>
+            <span>T</span>
+            <span>G</span>
+            <span>U</span>
+            <span>V</span>
+            <span>F</span>
+            <span>Q</span>
+            <span>Y</span>
+        </div>
+        <div class="roW dos up">
+            <span>F</span>
+            <span>J</span>
+            <span>S</span>
+            <span>A</span>
+            <span>P</span>
+            <span>H</span>
+            <span>T</span>
+            <span>M</span>
+            <span>I</span>
+            <span>D</span>
+            <span>S</span>
+            <span>W</span>
+            <span>S</span>
+            <span>W</span>
+            <span>B</span>
+            <span>G</span>
+        </div>
+        <div class="roW tres down">
+            <span>K</span>
+            <span>T</span>
+            <span>G</span>
+            <span>U</span>
+            <span>V</span>
+            <span>F</span>
+            <span>Q</span>
+            <span>Y</span>
+            <span>J</span>
+            <span>U</span>
+            <span>E</span>
+            <span>G</span>
+            <span>L</span>
+            <span>X</span>
+            <span>E</span>
+            <span>V</span>
+        </div>
+        <div class="roW quatro up">
+            <span>I</span>
+            <span>D</span>
+            <span>S</span>
+            <span>W</span>
+            <span>S</span>
+            <span>W</span>
+            <span>B</span>
+            <span>G</span>
+            <span>N</span>
+            <span>V</span>
+            <span>H</span>
+            <span>Q</span>
+            <span>K</span>
+            <span>G</span>
+            <span>N</span>
+            <span>L</span>
+        </div>
+        <div class="roW cinco down">
+            <span>J</span>
+            <span>U</span>
+            <span>E</span>
+            <span>G</span>
+            <span>L</span>
+            <span>X</span>
+            <span>E</span>
+            <span>V</span>
+            <span>A</span>
+            <span>X</span>
+            <span>E</span>
+            <span>I</span>
+            <span>W</span>
+            <span>Q</span>
+            <span>H</span>
+            <span>O</span>
+        </div>
+        <div class="roW seis up">
+            <span>N</span>
+            <span>V</span>
+            <span>H</span>
+            <span>Q</span>
+            <span>K</span>
+            <span>G</span>
+            <span>N</span>
+            <span>L</span>
+            <span>F</span>
+            <span>J</span>
+            <span>S</span>
+            <span>A</span>
+            <span>C</span>
+            <span>S</span>
+            <span>T</span>
+            <span>M</span>
+        </div>
+        <div class="roW siete down">
+            <span>A</span>
+            <span>X</span>
+            <span>E</span>
+            <span>I</span>
+            <span>W</span>
+            <span>Q</span>
+            <span>H</span>
+            <span>O</span>
+            <span>X</span>
+            <span>L</span>
+            <span>T</span>
+            <span>G</span>
+            <span>N</span>
+            <span>Z</span>
+            <span>L</span>
+            <span>B</span>
+        </div>
+        <div class="roW ocho up">
+            <span>F</span>
+            <span>J</span>
+            <span>S</span>
+            <span>A</span>
+            <span>C</span>
+            <span>S</span>
+            <span>T</span>
+            <span>M</span>
+            <span>L</span>
+            <span>B</span>
+            <span>Y</span>
+            <span>Z</span>
+            <span>P</span>
+            <span>W</span>
+            <span>B</span>
+            <span>Q</span>
+        </div>
+        <div class="roW nueve down">
+            <span>X</span>
+            <span>L</span>
+            <span>T</span>
+            <span>G</span>
+            <span>N</span>
+            <span>Z</span>
+            <span>L</span>
+            <span>B</span>
+            <span>H</span>
+            <span>T</span>
+            <span>E</span>
+            <span>X</span>
+            <span>L</span>
+            <span>Q</span>
+            <span>R</span>
+            <span>S</span>
+        </div>
+        <div class="roW diez up">
+            <span>L</span>
+            <span>B</span>
+            <span>Y</span>
+            <span>Z</span>
+            <span>P</span>
+            <span>W</span>
+            <span>B</span>
+            <span>Q</span>
+            <span>F</span>
+            <span>J</span>
+            <span>N</span>
+            <span>K</span>
+            <span>D</span>
+            <span>E</span>
+            <span>Y</span>
+            <span>I</span>
+        </div>
+        <div class="roW once down">
+            <span>H</span>
+            <span>T</span>
+            <span>E</span>
+            <span>X</span>
+            <span>L</span>
+            <span>Q</span>
+            <span>R</span>
+            <span>S</span>
+            <span>A</span>
+            <span>H</span>
+            <span>E</span>
+            <span>G</span>
+            <span>L</span>
+            <span>Q</span>
+            <span>R</span>
+            <span>Z</span>
+        </div>
+        <div class="roW doce up">
+            <span>F</span>
+            <span>J</span>
+            <span>N</span>
+            <span>K</span>
+            <span>D</span>
+            <span>E</span>
+            <span>Y</span>
+            <span>I</span>
+            <span>F</span>
+            <span>J</span>
+            <span>S</span>
+            <span>A</span>
+            <span>P</span>
+            <span>H</span>
+            <span>T</span>
+            <span>M</span>
+        </div>
+    </div>
+
+    <div class="backgroundImage fake">
             <div class="roW uno down">
-                    <span>A</span>
-                    <span>H</span>
-                    <span>E</span>
-                    <span>G</span>
-                    <span>L</span>
-                    <span>Q</span>
-                    <span>R</span>
-                    <span>Z</span>
-                    <span>K</span>
-                    <span>T</span>
-                    <span>G</span>
-                    <span>U</span>
-                    <span>V</span>
-                    <span>F</span>
-                    <span>Q</span>
-                    <span>Y</span>
+                <span>A</span>
+                <span>H</span>
+                <span>E</span>
+                <span>G</span>
+                <span>L</span>
+                <span>Q</span>
+                <span>R</span>
+                <span>Z</span>
+                <span>K</span>
+                <span>T</span>
+                <span>G</span>
+                <span>U</span>
+                <span>V</span>
+                <span>F</span>
+                <span>Q</span>
+                <span>Y</span>
             </div>
             <div class="roW dos up">
                 <span>F</span>
@@ -265,37 +519,40 @@
                 <span>M</span>
             </div>
         </div>
-    </body>
+</body>
 
-    <script>
-        // const controller = new ScrollMagic.Controller();
-        // const tl = new TimelineMax();
+<script>
 
-        // tl.to(".down span", 4, {color:"red"}, 0);
+    const controller = new ScrollMagic.Controller({ globalSceneOptions: { triggerHook: "onLeave", duration: "400%" } });
 
-        // const textScene = new ScrollMagic.Scene({triggerElement: ".down span", offset: 200, duration: "150%"});
-        // textScene.setTween(tl)
-        // textScene.addIndicators();
-        // textScene.addTo(controller);
+    const upArray = document.querySelectorAll(".real .up");
+    for (const element of upArray) {
 
+        const tl = new TimelineMax();
 
-        const controller2 = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onCenter", duration: "100%"}});
-        const tl2 = new TimelineMax();
+        tl.to(element, 5, { y: "-=1000", ease: Power2.easeOut }, 0);
+        //tl.to(element, 5, { y: "-=1000"}, 0);
 
-        tl2.to(".up span", 0.5, {left: "-=100", ease: Power2.easeOut});
-        tl2.to(".up span", 1.5, {rotation: 360, ease: Back.easeOut});
-        tl2.to(".up span", 0.5, {color:"red"});
+        const textScene = new ScrollMagic.Scene({ triggerElement: element});
+        textScene.setTween(tl)
+        textScene.addIndicators();
+        textScene.addTo(controller);
+    }
 
-        const textScene2 = new ScrollMagic.Scene({triggerElement: ".up span", offset: 200, duration: "50%"});
-        textScene2.setTween(tl2)
-        textScene2.addIndicators();
-        textScene2.addTo(controller2);
+    const downArray = document.querySelectorAll(".fake .down");
+    for (const element of downArray) {
 
-        const scene = new ScrollMagic.Scene({triggerElement: ".up span"});
+        const tl = new TimelineMax();
 
-        scene.setTween(tl2);
-        scene.addIndicators();
-        scene.addTo(controller2)
+        tl.to(element, 5, { y: "+=1000", ease: Power2.easeOut }, 0);
+        //tl.to(element, 5, { y: 0}, 0);
 
-    </script>
+        const textScene = new ScrollMagic.Scene({ triggerElement: element });
+        textScene.setTween(tl)
+        textScene.addIndicators();
+        textScene.addTo(controller);
+    }
+
+</script>
+
 </html>
