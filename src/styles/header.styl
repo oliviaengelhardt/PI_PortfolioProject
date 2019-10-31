@@ -1,14 +1,9 @@
 .header {
     position: absolute;
-    background-color: $backgroundColor;
     justify-content: center;
     align-items: center;
-    width: 100vh;
-    height: 100vw;
-    transform: rotate(-90deg) translateX(-100vh);
-    transform-origin: top left;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    // width: 100vh;
+    // height: 100vw;
 
     .content {
         width: 200vw;
@@ -16,8 +11,6 @@
         position: relative;
         display: flex;
         flex-direction: row;
-        transform: rotate(90deg) translateY(-100vh);
-        transform-origin: top left;
 
         p {
             margin: 0 auto;
@@ -26,7 +19,7 @@
             top: 50%;
             transform: translate(0%, -50%);
             font-size: 75px;
-            font-family: "Nostra";
+            font-family: 'Nostra';
             width: 100vw;
             mix-blend-mode: difference;
         }
@@ -37,7 +30,7 @@
         }
 
         .illustrations p {
-            margin-left: 50px;    
+            margin-left: 50px;
         }
 
         .ill {
@@ -60,11 +53,11 @@
 
         .girlThree {
             margin-top: -500px;
-            margin-left: 900px;    
+            margin-left: 900px;
         }
 
         .design p {
-            color: rgba(22, 20, 56, 0.70);
+            color: rgba(22, 20, 56, 0.7);
             margin-left: -140px;
             margin-right: 0;
         }
