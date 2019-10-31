@@ -10,8 +10,13 @@
     <title>landing</title>
 
 
-
     <style>
+        @font-face {
+            font-family: "Nostra";
+            src: url('nostra.woff2') format('woff2'),
+                url('nostra.woff') format('woff');
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -25,13 +30,9 @@
             width: 100vw;
             height: 100vh;
             position: relative;
-            /* overflow: hidden;*/
+            overflow: hidden;
             display: flex;
             flex-direction: row;
-        }
-
-        .backgroundImage .down {
-            opacity: 0;
         }
 
         .roW {
@@ -40,7 +41,7 @@
         }
 
         .roW span {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Nostra";
             font-size: 125px;
             color: rgba(22, 20, 56, 0.70);
             width: 100%;
@@ -48,30 +49,16 @@
             position: relative;
             left: 0vh;
             /* background-color: rgba(0, 0, 0, 0); */
+            transition: color 2s ease 0.4s, filter 2s ease 0.4s, transform 0.8s ease;
+            transform: scale(1);
         }
 
         .roW span:hover {
             color: rgba(255, 0, 0, 0.50);
             background-blend-mode: color-dodge;
             filter: blur(10px);
-
-        }
-
-        .backgroundImage:hover {
-            /* filter: blur(10px); */
-        }
-
-        .fake {
-            position: fixed;
-            top: 0;
-        }
-
-        .fake .up {
-            opacity: 0;
-        }
-
-        .fake .down {
-            opacity: 1;
+            transition: color 0.2s ease, filter 0.2s ease;
+            transform: scale(1.04);
         }
 
     </style>
@@ -82,7 +69,7 @@
 </head>
 
 <body class="container">
-    <div class="backgroundImage real">
+    <div class="backgroundImage real" id="pinscene">
         <div class="roW uno down">
             <span>A</span>
             <span>H</span>
@@ -245,7 +232,7 @@
             <span>R</span>
             <span>S</span>
         </div>
-        <div class="roW diez up">
+        <!-- <div class="roW diez up">
             <span>L</span>
             <span>B</span>
             <span>Y</span>
@@ -298,260 +285,31 @@
             <span>H</span>
             <span>T</span>
             <span>M</span>
-        </div>
+        </div> -->
     </div>
-
-    <div class="backgroundImage fake">
-            <div class="roW uno down">
-                <span>A</span>
-                <span>H</span>
-                <span>E</span>
-                <span>G</span>
-                <span>L</span>
-                <span>Q</span>
-                <span>R</span>
-                <span>Z</span>
-                <span>K</span>
-                <span>T</span>
-                <span>G</span>
-                <span>U</span>
-                <span>V</span>
-                <span>F</span>
-                <span>Q</span>
-                <span>Y</span>
-            </div>
-            <div class="roW dos up">
-                <span>F</span>
-                <span>J</span>
-                <span>S</span>
-                <span>A</span>
-                <span>P</span>
-                <span>H</span>
-                <span>T</span>
-                <span>M</span>
-                <span>I</span>
-                <span>D</span>
-                <span>S</span>
-                <span>W</span>
-                <span>S</span>
-                <span>W</span>
-                <span>B</span>
-                <span>G</span>
-            </div>
-            <div class="roW tres down">
-                <span>K</span>
-                <span>T</span>
-                <span>G</span>
-                <span>U</span>
-                <span>V</span>
-                <span>F</span>
-                <span>Q</span>
-                <span>Y</span>
-                <span>J</span>
-                <span>U</span>
-                <span>E</span>
-                <span>G</span>
-                <span>L</span>
-                <span>X</span>
-                <span>E</span>
-                <span>V</span>
-            </div>
-            <div class="roW quatro up">
-                <span>I</span>
-                <span>D</span>
-                <span>S</span>
-                <span>W</span>
-                <span>S</span>
-                <span>W</span>
-                <span>B</span>
-                <span>G</span>
-                <span>N</span>
-                <span>V</span>
-                <span>H</span>
-                <span>Q</span>
-                <span>K</span>
-                <span>G</span>
-                <span>N</span>
-                <span>L</span>
-            </div>
-            <div class="roW cinco down">
-                <span>J</span>
-                <span>U</span>
-                <span>E</span>
-                <span>G</span>
-                <span>L</span>
-                <span>X</span>
-                <span>E</span>
-                <span>V</span>
-                <span>A</span>
-                <span>X</span>
-                <span>E</span>
-                <span>I</span>
-                <span>W</span>
-                <span>Q</span>
-                <span>H</span>
-                <span>O</span>
-            </div>
-            <div class="roW seis up">
-                <span>N</span>
-                <span>V</span>
-                <span>H</span>
-                <span>Q</span>
-                <span>K</span>
-                <span>G</span>
-                <span>N</span>
-                <span>L</span>
-                <span>F</span>
-                <span>J</span>
-                <span>S</span>
-                <span>A</span>
-                <span>C</span>
-                <span>S</span>
-                <span>T</span>
-                <span>M</span>
-            </div>
-            <div class="roW siete down">
-                <span>A</span>
-                <span>X</span>
-                <span>E</span>
-                <span>I</span>
-                <span>W</span>
-                <span>Q</span>
-                <span>H</span>
-                <span>O</span>
-                <span>X</span>
-                <span>L</span>
-                <span>T</span>
-                <span>G</span>
-                <span>N</span>
-                <span>Z</span>
-                <span>L</span>
-                <span>B</span>
-            </div>
-            <div class="roW ocho up">
-                <span>F</span>
-                <span>J</span>
-                <span>S</span>
-                <span>A</span>
-                <span>C</span>
-                <span>S</span>
-                <span>T</span>
-                <span>M</span>
-                <span>L</span>
-                <span>B</span>
-                <span>Y</span>
-                <span>Z</span>
-                <span>P</span>
-                <span>W</span>
-                <span>B</span>
-                <span>Q</span>
-            </div>
-            <div class="roW nueve down">
-                <span>X</span>
-                <span>L</span>
-                <span>T</span>
-                <span>G</span>
-                <span>N</span>
-                <span>Z</span>
-                <span>L</span>
-                <span>B</span>
-                <span>H</span>
-                <span>T</span>
-                <span>E</span>
-                <span>X</span>
-                <span>L</span>
-                <span>Q</span>
-                <span>R</span>
-                <span>S</span>
-            </div>
-            <div class="roW diez up">
-                <span>L</span>
-                <span>B</span>
-                <span>Y</span>
-                <span>Z</span>
-                <span>P</span>
-                <span>W</span>
-                <span>B</span>
-                <span>Q</span>
-                <span>F</span>
-                <span>J</span>
-                <span>N</span>
-                <span>K</span>
-                <span>D</span>
-                <span>E</span>
-                <span>Y</span>
-                <span>I</span>
-            </div>
-            <div class="roW once down">
-                <span>H</span>
-                <span>T</span>
-                <span>E</span>
-                <span>X</span>
-                <span>L</span>
-                <span>Q</span>
-                <span>R</span>
-                <span>S</span>
-                <span>A</span>
-                <span>H</span>
-                <span>E</span>
-                <span>G</span>
-                <span>L</span>
-                <span>Q</span>
-                <span>R</span>
-                <span>Z</span>
-            </div>
-            <div class="roW doce up">
-                <span>F</span>
-                <span>J</span>
-                <span>N</span>
-                <span>K</span>
-                <span>D</span>
-                <span>E</span>
-                <span>Y</span>
-                <span>I</span>
-                <span>F</span>
-                <span>J</span>
-                <span>S</span>
-                <span>A</span>
-                <span>P</span>
-                <span>H</span>
-                <span>T</span>
-                <span>M</span>
-            </div>
-        </div>
 </body>
 
 <script>
 
-    const controller = new ScrollMagic.Controller({ globalSceneOptions: { triggerHook: "onLeave", duration: "400%" } });
+    const controller = new ScrollMagic.Controller({ globalSceneOptions: { triggerHook: "onLeave", duration: "500%" } });
 
+    const tl = new TimelineMax();
     const upArray = document.querySelectorAll(".real .up");
+    const downArray = document.querySelectorAll(".real .down");
+
     for (const element of upArray) {
-
-        const tl = new TimelineMax();
-
         tl.to(element, 5, { y: "-=1000", ease: Power2.easeOut }, 0);
-        //tl.to(element, 5, { y: "-=1000"}, 0);
-
-        const textScene = new ScrollMagic.Scene({ triggerElement: element});
-        textScene.setTween(tl)
-        textScene.addIndicators();
-        textScene.addTo(controller);
     }
 
-    const downArray = document.querySelectorAll(".fake .down");
     for (const element of downArray) {
-
-        const tl = new TimelineMax();
-
-        tl.to(element, 5, { y: "+=1000", ease: Power2.easeOut }, 0);
-        //tl.to(element, 5, { y: 0}, 0);
-
-        const textScene = new ScrollMagic.Scene({ triggerElement: element });
-        textScene.setTween(tl)
-        textScene.addIndicators();
-        textScene.addTo(controller);
+        tl.from(element, 5, { y: "-=1000", ease: Power2.easeOut }, 0);
     }
+
+
+    const pinScene = new ScrollMagic.Scene({ triggerElement: "#pinscene" });
+    pinScene.setTween(tl);
+    pinScene.setPin("#pinscene");
+    pinScene.addTo(controller);
 
 </script>
 
