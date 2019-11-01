@@ -49,6 +49,7 @@
       height: 100%;
       position: relative;
       left: 0vh;
+      line-height: 1;
       /* background-color: rgba(0, 0, 0, 0); */
       transition: color 2s ease 0.4s, filter 2s ease 0.4s, transform 0.8s ease;
       transform: scale(1);
@@ -296,18 +297,18 @@
   <div class="header">
     <div class="content">
 
-      <div class="slide illustrations">
+      <div class="slide illustrations" id="slideOne">
         <p>ILLUSTRATIONS</p>
         <div class="ill girlOne"><img src="ill_01.png" alt="girlOne"></div>
         <div class="ill girlTwo"><img src="ill_02.png" alt="girlTwo"></div>
         <div class="ill girlThree"><img src="ill_03.png" alt="girlThree"></div>
       </div>
 
-      <div class="slide design">
+      <div class="slide design" id="slideTwo">
         <p>UX/UI DESIGN</p>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+        <div class="dsgn dsgnOne"><img src="dsgn_01.png" alt="mikula"></div>
+        <div class="dsgn dsgnTwo"><img src="dsgn_02.png" alt="wroom"></div>
+        <div class="dsgn dsgnThree"><img src="dsgn_03.png" alt="redant"></div>
       </div>
 
     </div>
@@ -315,7 +316,7 @@
 
   <a href="about.html">
     <div class="nav">
-      <svg width="107" height="110" viewBox="0 0 107 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="takeMe" width="107" height="110" viewBox="0 0 107 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M0 44.2134L2.65257 44.5817C2.86401 42.7338 3.15233 40.9376 3.51754 39.2061L4.79898 39.5226C4.44659 41.2155 4.15826 42.9599 3.95323 44.7691L8.93162 45.4862C10.0785 45.6478 10.7769 45.0921 11.0588 43.3347C11.1643 42.7275 11.237 42.1149 11.2766 41.4997L12.5581 41.6742C12.5423 42.5923 12.4587 43.508 12.3082 44.4137C12.189 45.6173 11.8037 46.7786 11.1805 47.8122C10.9173 48.2238 10.5406 48.5488 10.0967 48.7474C9.65273 48.946 9.16095 49.0094 8.68174 48.93L3.61365 48.5811C3.55599 49.7053 3.53036 50.8425 3.53036 51.999H2.24892C2.24892 50.8102 2.24892 49.6407 2.33862 48.4971L0.102515 48.3097C0.0320359 46.9271 0 45.5573 0 44.2134Z"
           fill="#4C42C4" />
@@ -370,30 +371,5 @@
   </a>
   <!-- built files will be auto injected -->
 </body>
-
-
-<script>
-
-  const controller = new ScrollMagic.Controller({ globalSceneOptions: { triggerHook: "onLeave", duration: "400%" } });
-
-  const tl = new TimelineMax();
-  const upArray = document.querySelectorAll(".real .up");
-  const downArray = document.querySelectorAll(".real .down");
-
-  for (const element of upArray) {
-    tl.to(element, 5, { y: "-=1000", ease: Power2.easeOut }, 0);
-  }
-
-  for (const element of downArray) {
-    tl.from(element, 5, { y: "-=1000", ease: Power2.easeOut }, 0);
-  } 
-
-
-  const pinScene = new ScrollMagic.Scene({ triggerElement: "#pinscene" });
-  pinScene.setTween(tl);
-  pinScene.setPin("#pinscene");
-  pinScene.addTo(controller);
-
-</script>
 
 </html>
