@@ -8,6 +8,12 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>about</title>
 
+    <!-- <script>
+        const controller = new ScrollMagic.Controller({ globalSceneOptions: { triggerHook: "onEnter" } });
+        const tl = new TimelineMax();
+
+        tl.to(".about-text", 1, { opacity: 1, ease: Sine.easeOut }, 0);
+    </script> -->
 
     <style>
         @font-face {
@@ -15,10 +21,24 @@
             src: url('nostra.woff2') format('woff2'), 
                 url('nostra.woff') format('woff');
         }
+
+        * {
+        margin: 0;
+        padding: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+        box-sizing: inherit;
+        }
+
+        html {
+        box-sizing: border-box;
+        }
         
         body {
             background-color: #716F8A;
-            background-image: url("flowa.png");
             margin: 0;
         }
 
@@ -41,6 +61,7 @@
             left: 4%;
             top: 150px;
             width: 700px;
+            /* opacity: 0; */
         }
 
         @media only screen and (max-width: 900px) {
@@ -61,14 +82,6 @@
             right: 0;
             transform: scale(0.75);
         }
-
-        /* .work {
-            color: #4C42C3;
-            font-family: Arial, Helvetica, sans-serif;
-            position: fixed;
-            bottom: 50px;
-            right: 36px;
-        } */
 
         .nav .work {
             color: #4C42C3;
